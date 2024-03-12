@@ -38,9 +38,7 @@
 
 ![labelme操作简述](imgs/labelme使用.png)
 
-## ④ 训练
+## ④ 基于自己的数据训练yolov8
 
-  <!-- 下载官方文档与权重
-  然后还需要安装ultralytics，目前YOLOv8核心代码都封装在这个依赖包里面，可通过以下命令安装
-
-``pip install ultralytics`` -->
+安装ultralytics，目前YOLOv8核心代码都封装在这个依赖包里面，可通过以下命令安装
+``pip install ultralytics``
