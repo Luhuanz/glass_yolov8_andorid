@@ -28,6 +28,18 @@
     下载[evethings](https://www.voidtools.com/zh-cn/)找到labelme/ai所在目录。[参考Labelme加载AI（Segment-Anything）模型进行图像标注](https://blog.csdn.net/qq_50993557/article/details/134616280)中从二(2)开始[modelfile](https://pan.baidu.com/s/1QiuDB6efCjNYZ5QwxXPdig?pwd=1bn7)，做完之后``在labelme\ai\segment_anything_model.py``文件中修改。
     ![修改图](imgs/修改sam.png)
 
+## ③制作自己数据集
+
+  在命令行中输入labelme(如果是conda请切换环境)
+
+- 打开目录(自己的图片文件夹)。
+- 编辑(create-AI-Polygon或者编辑多边形)。
+- 制作数据集。
+
+![labelme操作简述](imgs/labelme使用.png)
+
+## ④ 训练
+
   <!-- 下载官方文档与权重
   然后还需要安装ultralytics，目前YOLOv8核心代码都封装在这个依赖包里面，可通过以下命令安装
 
