@@ -22,10 +22,12 @@
 
 ## ② 安装labelme+sam进行半自动化标注
 
-``conda create --name=labelme python=3.8``
+- (1)``conda create --name=labelme python=3.8``
 ``conda activate labelme``
 ``pip install labelme``
-    下载[evethings](https://www.voidtools.com/zh-cn/)找到labelme/ai所在目录。[参考Labelme加载AI（Segment-Anything）模型进行图像标注](https://blog.csdn.net/qq_50993557/article/details/134616280)中从二(2)开始[modelfile](https://pan.baidu.com/s/1QiuDB6efCjNYZ5QwxXPdig?pwd=1bn7)，做完之后``在labelme\ai\segment_anything_model.py``文件中修改。
+- (2) 下载[evethings](https://www.voidtools.com/zh-cn/)找到labelme/ai所在目录。
+- (3)[参考Labelme加载AI（Segment-Anything）模型进行图像标注](https://blog.csdn.net/qq_50993557/article/details/134616280)中从二(2)开始[modelfile](https://pan.baidu.com/s/1QiuDB6efCjNYZ5QwxXPdig?pwd=1bn7)
+- (4) 接着``在labelme\ai\segment_anything_model.py``文件中修改。
     ![修改图](imgs/修改sam.png)
 
 ## ③制作自己数据集
