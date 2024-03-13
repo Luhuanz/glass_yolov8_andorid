@@ -209,6 +209,8 @@ class Detect(nn.Module)改动如下
  
 
 ## 最终实时检测效果以及我们修改后的效果是（左上角有角度）
-![success](imgs/success.jpg)
+<img src="imgs/success.jpg" alt="Success" width="500" height="400">
+
 apk: ：https://pan.baidu.com/s/16LtEqdpjhlTXz_jzZE72dQ?pwd=o4dz 
  
+ ## 图片检测 
