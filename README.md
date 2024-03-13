@@ -144,5 +144,5 @@ model=D:\ultralytics\ultralytics\weights\yolov8s-seg.pt epochs=100   imgsz=640 b
   data=D:\ultralytics\ultralytics\datasets\coco8-seg.yaml 
   source=D:\ultralytics\ultralytics\mydatasets-seg\images\val
   ```
+
 ## 2.导出修改网络结构导出onnx转 ncnn
- 
