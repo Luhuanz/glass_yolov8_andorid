@@ -146,6 +146,7 @@ model=D:\ultralytics\ultralytics\weights\yolov8s-seg.pt epochs=100   imgsz=640 b
   ```
 
 ## 2.导出修改网络结构导出onnx 
+
 - 修改文件1：
   D:\ultralytics\ultralytics\nn\modules\block.py中
   class C2f(nn.Module)改动如下
@@ -161,6 +162,7 @@ class Detect(nn.Module)改动如下
 **具体请参考改[项目](https://github.com/Digital2Slave/ncnn-android-yolov8-seg/wiki/Convert-yolov8%E2%80%90seg-to-ncnn-model-step-by-step)中1·1-1.4 导出onnx**
 
 ### ① 自动onnx转换成NCNN文件
+
 使用该[网站](https://convertmodel.com/)一键生成ncnn：
 ![一键生成](imgs/ncnn.png) 
 
@@ -168,5 +170,45 @@ class Detect(nn.Module)改动如下
  
  
 ### ② 手工对于 yolov8l-x无法使用①生成
+
 请参考[该教程](https://blog.csdn.net/qq_40231159/article/details/111808792)
-### 判断生成的ncnn是否时候编译
+
+### 判断生成的ncnn是否适合编译
+
+在 %s.param中查看是否有这两层![编译](imgs/验证.png) 
+
+## yolov8语义分割部署安卓手机
+
+
+### ①安装Android Studio
+
+官网：https://developer.android.google.cn/studio/
+  
+> 安装时会提示安装SDK
+> 同意licenses
+>注意：Android SDK安装路径中不要有空格
+>注意配置：
+>File->Settings->Appearance & Behavior ->System Settings->Android
+>SDK
+>SDK Platforms选中面向手机的Android版本
+>SDK Tools选中NDK, CMake
+>注意：cmake的版本选择不要太高
+
+![sdk](imgs/sdk.png)
+### ②android studio编译问题
+您可能需要[这个](https://blog.csdn.net/qq_42257666/article/details/130725656?spm=1001.2014.3001.5502)
+
+
+
+参照[该教程](https://blog.csdn.net/liujiahao123987/article/details/128880640?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522171029765216800188545662%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&request_id=171029765216800188545662&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_ecpm_v1~rank_v31_ecpm-1-128880640-null-null.nonecase&utm_term=ncnn&spm=1018.2226.3001.4450)放置所需文件,参考我的目录修改。以及该[教程](https://github.com/FeiGeChuanShu/ncnn-android-yolov8/issues/8)可能会给您一点灵感。
+ 
+
+
+ ![目录](imgs/an.png)
+我的文件：https://pan.baidu.com/s/1VGfMw8Bjmn0Utlj2nJWLMQ?pwd=tpqa 
+ 
+
+## 最终实时检测效果以及我们修改后的效果是（左上角有角度）
+![success](imgs/success.jpg)
+apk: ：https://pan.baidu.com/s/16LtEqdpjhlTXz_jzZE72dQ?pwd=o4dz 
+ 
