@@ -182,7 +182,7 @@ class Detect(nn.Module)改动如下
 
 在 %s.param中查看是否有这两层![编译](imgs/验证.png) 
 
-## yolov8语义分割部署安卓手机
+##3. yolov8语义分割部署安卓手机
 
 
 ### ①安装Android Studio
