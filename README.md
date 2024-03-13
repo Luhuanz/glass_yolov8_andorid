@@ -30,17 +30,66 @@
 - (4) 接着``在labelme\ai\segment_anything_model.py``文件中修改。
     ![修改图](imgs/修改sam.png)
 
-## ③制作自己数据集
+## ③制作自己数据集以及对应yolov8训练格式
 
   在命令行中输入labelme(如果是conda请切换环境)
 
-- 打开目录(自己的图片文件夹)。
-- 编辑(create-AI-Polygon或者编辑多边形)。
-- 制作数据集。
+- 创建mydatasets,数据集图像文件放置在mydatasets目录下
 
+- 打开目录(自己的图片文件夹mydatasets)。
+- 编辑(create-AI-Polygon或者编辑多边形)。
+- 制作数据集。 标注后生成json文件 分验证和测试集（在mydatasets中挑选一部分的图片和对应的json放到glass_val文件夹(自己创建)下）
 ![labelme操作简述](imgs/labelme使用.png)
+**注: 玻璃破碎数据集有2个类别："inner","outer"**
+
+- 图像标注格式转换 json->coco->yolo
+  - 把labelme标注的json数据格式转换成COCO数据格式的参考[该项目](https://github.com/Tony607/labelme2coco/tree/master)
+  - COCO格式标注数据转换成YOLO格式 参考[该项目][def]中general_json2yolo.py 文件
+     其中修改代码
+
+    ```python
+      if source == 'COCO':
+      convert_coco_json('../mydatasets/annotations', #创建annotations把生成的json文件放进去 directory with *.json 
+      use_segments=True,cls91to80=False)
+    ```
+
+    在def convert_coco_json(json_dir='../coco/annotations/', use_segments=False, cls91to80=False):   中修改一句
+
+    ```python
+    #cls = coco80[ann['category_id'] - 1] if cls91to80 else ann['category_id'] - 1 
+    cls = coco80[ann['category_id'] - 1] if cls91to80 else ann['category_id'] # 
+    ```
+
+    执行
+    **python general_json2yolo.py**  生成labels 和images文件夹，images中没有数据
+    把转成的YOLO数据格式（labels中的txt文件）的数据的目录结构准备成YOLO目录结构格式。
+  - 创建对应yolo的工作目录
+    ![工作目录](imgs/操作流程.png)
 
 ## ④ 基于自己的数据训练yolov8
 
-安装ultralytics，目前YOLOv8核心代码都封装在这个依赖包里面，可通过以下命令安装
+- 安装ultralytics，目前YOLOv8核心代码都封装在这个依赖包里面，可通过以下命令安装
 ``pip install ultralytics``
+- 下载预训练权重文件
+  下载yolov8s-seg.pt权重文件，并放置在创建的weights文件夹下
+下载链接：<https://docs.ultralytics.com/tasks/segment/>
+
+> 例如： D:\ultralytics\ultralytics\weights
+
+- 安装测试
+执行
+
+  ```python
+  yolo segment predict model=D:/ultralytics/ultralytics/weights/
+  yolov8-seg.pt source=D:/ultralytics/ultralytics/assets/bus.jpg
+  ```
+
+  摄像头
+
+  ```python
+  yolo segment predict model=D:/ultralytics/ultralytics/weights/
+  
+  yolov8s-seg.pt source=0 show
+  ```
+
+[def]: https://github.com/ultralytics/JSON2YOLO
