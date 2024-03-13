@@ -158,6 +158,15 @@ class Detect(nn.Module)改动如下
   D:\ultralytics\ultralytics\nn\modules\head.py
   ![seg](imgs/seg.png)
 
-**具体请参考改[项目](https://github.com/Digital2Slave/ncnn-android-yolov8-seg/wiki/Convert-yolov8%E2%80%90seg-to-ncnn-model-step-by-step)中1·1-1.4 导出onnx**便携式 qws
+**具体请参考改[项目](https://github.com/Digital2Slave/ncnn-android-yolov8-seg/wiki/Convert-yolov8%E2%80%90seg-to-ncnn-model-step-by-step)中1·1-1.4 导出onnx**
 
- onnx转换成NCNN文件
+### ① 自动onnx转换成NCNN文件
+使用该[网站](https://convertmodel.com/)一键生成ncnn：
+![一键生成](imgs/ncnn.png) 
+
+
+ 
+ 
+### ② 手工对于 yolov8l-x无法使用①生成
+请参考[该教程](https://blog.csdn.net/qq_40231159/article/details/111808792)
+### 判断生成的ncnn是否时候编译
