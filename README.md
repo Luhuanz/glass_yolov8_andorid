@@ -235,5 +235,5 @@ apk: ：https://pan.baidu.com/s/16LtEqdpjhlTXz_jzZE72dQ?pwd=o4dz
 - [图片检测示例](https://pan.baidu.com/s/1w5dBCZI4nc0O56xqDjfw-Q?pwd=boh4)
 
 ## :question: 帮助
-如遇到问题，请参考[FAQ](链接)或提交[Issue](https://github.com/your-github-repo/issues)。
+如遇到问题，请参考[FAQ](链接)或提交[Issue](https://github.com/Luhuanz/glass_yolov8_andorid/issues)。
  
