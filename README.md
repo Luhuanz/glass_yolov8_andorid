@@ -145,4 +145,18 @@ model=D:\ultralytics\ultralytics\weights\yolov8s-seg.pt epochs=100   imgsz=640 b
   source=D:\ultralytics\ultralytics\mydatasets-seg\images\val
   ```
 
-## 2.导出修改网络结构导出onnx转 ncnn
+## 2.导出修改网络结构导出onnx 
+- 修改文件1：
+  D:\ultralytics\ultralytics\nn\modules\block.py中
+  class C2f(nn.Module)改动如下
+  ![C2f](imgs/c2f.png)
+- 修改文件2：
+  D:\ultralytics\ultralytics\nn\modules\head.py中
+class Detect(nn.Module)改动如下
+ ![Detect](imgs/Detect.png)
+- 修改文件3: 
+  D:\ultralytics\ultralytics\nn\modules\head.py
+  ![seg](imgs/seg.png)
+
+具体请参考改[项目](https://github.com/Digital2Slave/ncnn-android-yolov8-seg/wiki/Convert-yolov8%E2%80%90seg-to-ncnn-model-step-by-step)中1·1-1.4
+
