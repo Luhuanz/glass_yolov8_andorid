@@ -20,7 +20,7 @@
   - 参考[此教程](https://blog.csdn.net/baidu_41774120/article/details/128588759?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522171023369016800186583425%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=171023369016800186583425&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-2-128588759-null-null.142^v99^pc_search_result_base1&utm_term=%E5%AE%89%E8%A3%85torch%20torchvision&spm=1018.2226.3001.4187)。
   **注意:最好torch选择1.10以上。**
 
-## ② 安装labelme+sam进行半自动化标注
+### ② 安装labelme+sam进行半自动化标注
 
 - (1)``conda create --name=labelme python=3.8``
 ``conda activate labelme``
@@ -30,7 +30,7 @@
 - (4) 接着``在labelme\ai\segment_anything_model.py``文件中修改。
     ![修改图](imgs/修改sam.png)
 
-## ③制作自己数据集以及对应yolov8训练格式
+### ③制作自己数据集以及对应yolov8训练格式
 
   在命令行中输入labelme(如果是conda请切换环境)
 
@@ -66,7 +66,7 @@
   - 创建对应yolo的工作目录
     ![工作目录](imgs/操作流程.png)
 
-## ④ 基于自己的数据训练yolov8
+### ④ 基于自己的数据训练yolov8
 
 - 安装ultralytics，目前YOLOv8核心代码都封装在这个依赖包里面，可通过以下命令安装
 ``pip install ultralytics``
@@ -117,7 +117,7 @@
 - 基于yolov8训练数据集
 
 ```python
-yolo detect train data=D:\ultralytics\ultralytics\datasets\myyolo-seg.yaml 
+yolo detect train data=D:\ultralytics\ultralytics\datasets\coco8-seg.yaml 
 model=D:\ultralytics\ultralytics\weights\yolov8s-seg.pt epochs=100   imgsz=640 batch=16 workers=4
 ```
 
@@ -125,13 +125,24 @@ model=D:\ultralytics\ultralytics\weights\yolov8s-seg.pt epochs=100   imgsz=640 b
  查看D:\ultralytics\runs\segment\train\weights目录下的文件
 - 测试训练出的网络模型
 
-  -测试图片
+  - 测试图片
 
   ```python
 
   yolo segment predict 
   model=D:\ultralytics\runs\segment\train\weights\best.pt 
-  data=D:\ultralytics\ultralytics\datasets\myyolo-seg.yaml 
-  source=D:\ultralytics\ultralytics\mydataset-seg\images\val\img_val001.jpg
+  data=D:\ultralytics\ultralytics\datasets\coco8-seg.yaml 
+  source=D:\ultralytics\ultralytics\mydatasets-seg\images\val\img_val001.jpg
 
   ```
+
+  - 批量测试图片
+
+  ```python
+  yolo segment predict 
+  model=D:\ultralytics\runs\segment\train\weights\best.pt 
+  data=D:\ultralytics\ultralytics\datasets\coco8-seg.yaml 
+  source=D:\ultralytics\ultralytics\mydatasets-seg\images\val
+  ```
+## 2.导出修改网络结构导出onnx转 ncnn
+ 
