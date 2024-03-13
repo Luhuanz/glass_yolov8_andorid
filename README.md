@@ -92,4 +92,46 @@
   yolov8s-seg.pt source=0 show
   ```
 
-[def]: https://github.com/ultralytics/JSON2YOLO
+- 把制作好的mydatasets-seg数据集放到ultralytics\ultralytics\datasets下
+
+- 修改配置文件
+  - 修改文件datasets/coco8-seg.yaml
+
+      ```bash
+      path: D:/ultralytics/ultralytics/datasets/mydatasets-seg # dataset root dir
+    train: images/train # train images (relative to 'path')  
+    val: images/val # val images (relative to 'path')  
+    test: # test images (optional)
+    # Classes
+    names:
+    0: inner
+    1: outer
+    ```
+
+  - 修改文件ultralytics/models/v8/seg/yolov8-seg.yaml
+
+    ```bash
+    nc: 80 # number of classes 改为自己的类别 我的是nc=2
+    ```
+
+- 基于yolov8训练数据集
+
+```python
+yolo detect train data=D:\ultralytics\ultralytics\datasets\myyolo-seg.yaml 
+model=D:\ultralytics\ultralytics\weights\yolov8s-seg.pt epochs=100   imgsz=640 batch=16 workers=4
+```
+
+- 训练结果的查看
+ 查看D:\ultralytics\runs\segment\train\weights目录下的文件
+- 测试训练出的网络模型
+
+  -测试图片
+
+  ```python
+
+  yolo segment predict 
+  model=D:\ultralytics\runs\segment\train\weights\best.pt 
+  data=D:\ultralytics\ultralytics\datasets\myyolo-seg.yaml 
+  source=D:\ultralytics\ultralytics\mydataset-seg\images\val\img_val001.jpg
+
+  ```
