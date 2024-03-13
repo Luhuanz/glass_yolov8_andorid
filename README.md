@@ -1,6 +1,3 @@
-# glass_yolov8_andorid
-
-玻璃破碎yolov8-seg-Ncnn实时监测及图像检测
 # GlassYOLOv8 Android: 玻璃破碎实时监测与图像检测
 
 本项目使用YOLOv8-seg-Ncnn实现了对玻璃破碎的实时监测及图像检测，支持在Android设备上运行。以下是项目的详细指南。
