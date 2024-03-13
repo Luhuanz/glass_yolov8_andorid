@@ -1,10 +1,18 @@
 # glass_yolov8_andorid
 
 玻璃破碎yolov8-seg-Ncnn实时监测及图像检测
-①②③④⑤⑥⑦⑧⑨⑩
+# GlassYOLOv8 Android: 玻璃破碎实时监测与图像检测
 
-## &#x1F554;1. 训练自己的数据集
+本项目使用YOLOv8-seg-Ncnn实现了对玻璃破碎的实时监测及图像检测，支持在Android设备上运行。以下是项目的详细指南。
 
+## :sparkles: 特性
+- 现实世界中玻璃破碎的实时检测。
+- 支持自定义数据集训练。
+- Android端部署，便于移动应用。
+- 包含详细的安装和配置指南。
+ 
+### 1. 训练自己的数据集
+ 
 ### ①  安装cuda,cudnn,torch, torchvison
 
 - (1).首先要在设备管理器中查看你的显卡型号,然后去[NVIDIA 驱动](https://www.nvidia.cn/Download/index.aspx?lang=cn)下载驱动。
