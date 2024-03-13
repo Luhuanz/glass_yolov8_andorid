@@ -216,10 +216,24 @@ class Detect(nn.Module)改动如下
 我的文件：https://pan.baidu.com/s/1VGfMw8Bjmn0Utlj2nJWLMQ?pwd=tpqa 
  
 
-## 最终实时检测效果以及我们修改后的效果是（左上角有角度）
+##  :camera_flash:最终实时检测效果以及我们修改后的效果是（左上角有角度）
 <img src="imgs/success.jpg" alt="Success" width="500" height="400">
 
 apk: ：https://pan.baidu.com/s/16LtEqdpjhlTXz_jzZE72dQ?pwd=o4dz 
+
  
  ## [图片检测](链接：https://pan.baidu.com/s/1w5dBCZI4nc0O56xqDjfw-Q?pwd=boh4 )
+
+ 
+ 
+ 
+
+## :link: 相关链接
+- [项目代码](https://github.com/your-github-repo)
+- [训练模型下载](https://pan.baidu.com/s/16LtEqdpjhlTXz_jzZE72dQ?pwd=o4dz)
+- [Android APK下载](https://pan.baidu.com/s/16LtEqdpjhlTXz_jzZE72dQ?pwd=o4dz)
+- [图片检测示例](https://pan.baidu.com/s/1w5dBCZI4nc0O56xqDjfw-Q?pwd=boh4)
+
+## :question: 帮助
+如遇到问题，请参考[FAQ](链接)或提交[Issue](https://github.com/your-github-repo/issues)。
  
