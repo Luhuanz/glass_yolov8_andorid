@@ -220,6 +220,7 @@ apk: ：https://pan.baidu.com/s/16LtEqdpjhlTXz_jzZE72dQ?pwd=o4dz
 
  
  ## [图片检测](链接：https://pan.baidu.com/s/1w5dBCZI4nc0O56xqDjfw-Q?pwd=boh4 )
+ 注意:图像检测时候jni yoloncnn.cpp 需要改图像尺寸
 
  
  
